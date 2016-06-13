@@ -4,3 +4,6 @@ services:
     image: wildduck/static
     src: wildduck-static
 
+  haproxy:
+    image: wildduck/haproxy
+    src: wildduck-haproxy   
