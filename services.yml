@@ -1,5 +1,9 @@
 version: '2'
 services:
+  blog:
+    image: wildduck/blog
+    src: wildduck-blog
+    
   static:
     image: wildduck/static
     src: wildduck-static

@@ -5,12 +5,18 @@ services:
     volumes:
       - ./../wildduck-static/www:/usr/share/nginx/html
 
+  blog:
+    image: wildduck/blog
+    volumes:
+      - /var/lib/wildduck/blog:/var/lib/ghost
+
   haproxy:
     image: wildduck/haproxy
     ports:
       - 80:80
     links:
       - static:static
+      - blog:blog
     volumes:
       - ./../wildduck-haproxy/etc/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
       - /dev/log:/var/lib/haproxy/dev/log
