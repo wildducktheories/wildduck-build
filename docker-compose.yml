@@ -1,0 +1,9 @@
+version: '2'
+services:
+  static:
+    image: wildduck/static
+    volumes:
+      - ./../wildduck-static/www:/usr/share/nginx/html
+    ports:
+      - 80:80
+

@@ -1,0 +1,6 @@
+version: '2'
+services:
+  static:
+    image: wildduck/static
+    src: wildduck-static
+
