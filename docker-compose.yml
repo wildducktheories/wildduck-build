@@ -14,6 +14,7 @@ services:
     image: wildduck/haproxy
     ports:
       - 80:80
+      - 443:443
     links:
       - static:static
       - blog:blog
@@ -21,4 +22,5 @@ services:
       - ./../wildduck-haproxy/etc/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
       - /dev/log:/var/lib/haproxy/dev/log
       - /dev/log:/dev/log
+      - /etc/letsencrypt:/etc/letsencrypt
 
