@@ -9,6 +9,7 @@ services:
     image: wildduck/blog
     volumes:
       - /var/lib/wildduck/blog:/var/lib/ghost
+      - ./../wildduck-blog/themes/solar:/var/lib/ghost/themes/solar
 
   haproxy:
     image: wildduck/haproxy
