@@ -5,11 +5,22 @@ services:
     volumes:
       - ./../wildduck-static/www:/usr/share/nginx/html
 
+  stopstatic:
+    image: stoppremiumsms/static
+    volumes:
+      - ./../stop-static/www:/usr/share/nginx/html
+
   blog:
     image: wildduck/blog
     volumes:
       - /var/lib/wildduck/blog:/var/lib/ghost
       - ./../wildduck-blog/themes/solar:/var/lib/ghost/themes/solar
+
+  stopblog:
+    image: stoppremiumsms/blog
+    volumes:
+      - /var/lib/wildduck/blog:/var/lib/ghost
+      - ./../stop-blog/themes/solar:/var/lib/ghost/themes/solar
 
   haproxy:
     image: wildduck/haproxy
@@ -19,6 +30,8 @@ services:
     links:
       - static:static
       - blog:blog
+      - stopstatic:stopstatic
+      - stopblog:stopblog
     volumes:
       - ./../wildduck-haproxy/etc/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
       - /dev/log:/var/lib/haproxy/dev/log

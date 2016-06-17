@@ -8,6 +8,14 @@ services:
     image: wildduck/static
     src: wildduck-static
 
+  stopblog:
+    image: stoppremiumsms/blog
+    src: stop-blog
+    
+  stopstatic:
+    image: stoppremiumsms/static
+    src: stop-static
+
   haproxy:
     image: wildduck/haproxy
     src: wildduck-haproxy   
