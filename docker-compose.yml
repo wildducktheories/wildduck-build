@@ -27,7 +27,7 @@ services:
       -  /var/lib/wildduck/stop-blog:/var/lib/ghost
       - ./../stop-blog/themes/solar:/var/lib/ghost/themes/solar
 
-  jonlog:
+  jonblog:
     image: jonseymour/blog
     volumes:
       -  /var/lib/wildduck/jonseymour-blog:/var/lib/ghost

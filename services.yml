@@ -16,6 +16,14 @@ services:
     image: stoppremiumsms/static
     src: stop-static
 
+  jonblog:
+    image: jonseymour/blog
+    src: jonseymour-blog
+    
+  jonstatic:
+    image: jonseymour/static
+    src: jonseymour-static
+
   haproxy:
     image: wildduck/haproxy
     src: wildduck-haproxy   
