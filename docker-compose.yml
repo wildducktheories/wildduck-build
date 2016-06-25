@@ -13,7 +13,7 @@ services:
   jonstatic:
     image: jonseymour/static
     volumes:
-      - ./../jon-static/www:/usr/share/nginx/html
+      - ./../jonseymour-static/www:/usr/share/nginx/html
 
   blog:
     image: wildduck/blog
