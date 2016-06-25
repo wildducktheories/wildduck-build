@@ -10,6 +10,11 @@ services:
     volumes:
       - ./../stop-static/www:/usr/share/nginx/html
 
+  jonstatic:
+    image: jonseymour/static
+    volumes:
+      - ./../jon-static/www:/usr/share/nginx/html
+
   blog:
     image: wildduck/blog
     volumes:
@@ -21,6 +26,12 @@ services:
     volumes:
       -  /var/lib/wildduck/stop-blog:/var/lib/ghost
       - ./../stop-blog/themes/solar:/var/lib/ghost/themes/solar
+
+  jonlog:
+    image: jonseymour/blog
+    volumes:
+      -  /var/lib/wildduck/jonseymour-blog:/var/lib/ghost
+      - ./../jonseymour-blog/themes/solar:/var/lib/ghost/themes/solar
 
   haproxy:
     image: wildduck/haproxy
