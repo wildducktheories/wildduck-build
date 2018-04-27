@@ -8,14 +8,6 @@ services:
     image: wildduck/static
     src: wildduck-static
 
-  stopblog:
-    image: stoppremiumsms/blog
-    src: stop-blog
-    
-  stopstatic:
-    image: stoppremiumsms/static
-    src: stop-static
-
   jonblog:
     image: jonseymour/blog
     src: jonseymour-blog
